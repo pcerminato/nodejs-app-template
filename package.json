@@ -1,0 +1,36 @@
+{
+  "name": "nodejs-app-template",
+  "version": "0.0.1",
+  "description": "",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "start": "node --env-file=.env dist/server.js",
+    "dev": "tsx --env-file=.env --watch src/server.ts",
+    "build": "rm -rf ./dist && tsc",
+    "test": "vitest",
+    "e2e": "npx playwright test --ui"
+  },
+  "keywords": [],
+  "author": "pcerminato@gmail.com",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/pcerminato/nodejs-app-template/issues"
+  },
+  "homepage": "https://github.com/pcerminato/nodejs-app-template#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pcerminato/nodejs-app-template.git"
+  },
+  "dependencies": {
+    "express": "^5.2.1"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.61.1",
+    "@types/express": "^5.0.6",
+    "@types/node": "^25.9.1",
+    "tsx": "^4.22.4",
+    "typescript": "^6.0.3",
+    "vitest": "^4.1.9"
+  }
+}
