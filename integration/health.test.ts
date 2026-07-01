@@ -1,10 +1,11 @@
+import { describe, test, expect } from 'vitest';
 import request from 'supertest';
-import { createApp } from '../app.js';
+import { createApp } from '../src/app.js';
 
 const app = createApp();
 
 describe('API Integration Tests', () => {
-  it('GET /health - should return 200 and success status', async () => {
+  test('GET /health - should return 200 and success status', async () => {
     const response = await request(app)
       .get('/health')
       .expect('Content-Type', /json/)

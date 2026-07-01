@@ -1,0 +1,15 @@
+/* 
+  "./tsconfig.json" has ./ as the rootFolder to give visibility to the folders there
+  that need to be processes by ts (namely /test and /integration).
+  "tsconfig.build.json" extends tsconfig.json to run the build only over /src and to keep
+  a clean directory in /dist
+  (see the "build" command in package.json)
+*/
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "rootDir": "./src"
+  },
+  "include": ["src/**/*"],
+  "exclude": []
+}

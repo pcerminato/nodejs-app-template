@@ -7,7 +7,7 @@
   "scripts": {
     "start": "node --env-file=.env dist/server.js",
     "dev": "tsx --env-file=.env --watch src/server.ts",
-    "build": "rm -rf ./dist && tsc",
+    "build": "rm -rf ./dist && tsc --project tsconfig.build.json",
     "test": "vitest"
   },
   "keywords": [],

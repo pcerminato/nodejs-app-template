@@ -4,11 +4,27 @@
     "module": "NodeNext",
     "moduleResolution": "NodeNext",
     "outDir": "./dist",
-    "rootDir": "./src",
+    "rootDir": "./",
+
+    /* Core Safety */
     "strict": true,
     "esModuleInterop": true,
     "skipLibCheck": true,
-    "types": ["node", "vitest/globals"]
+    "forceConsistentCasingInFileNames": true,
+
+    /* Code Cleanliness Flags */
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noImplicitReturns": true
   },
-  "include": ["src/**/*"]
+  /* Include both production source code and the root test directories */
+  "include": [
+    "src/**/*",
+    "tests/**/*",
+    "integration/**/*",
+    "integration",
+    "tests"
+  ],
+  /* Exclude the test folders from the build (not included in /dist) */
+  "exclude": ["node_modules", "dist", "tests/**/*", "integration/**/*"]
 }

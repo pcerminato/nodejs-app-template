@@ -1,4 +1,4 @@
-import { NextFunction, Request, Response } from "express";
+import { Request, Response } from 'express';
 
 type AppError = Error & {
   status?: number;
@@ -6,15 +6,10 @@ type AppError = Error & {
 
 const defaultError = {
   status: 500,
-  message: "Internal Server Error",
+  message: 'Internal Server Error',
 };
 
-export const errorHandler = (
-  err: AppError,
-  _: Request,
-  res: Response,
-  next: NextFunction,
-) => {
+export const errorHandler = (err: AppError, _: Request, res: Response) => {
   console.error(err.stack);
 
   res.status(err.status || defaultError.status).json({
